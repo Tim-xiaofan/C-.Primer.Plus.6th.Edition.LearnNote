@@ -1,0 +1,13 @@
+in this chapter you’ll learn about the following:
+--Rules for naming C++ variables
+--C++’s built-in integer types: unsigned long, long, unsigned int, int, unsigned short, short, char, unsigned char, signed char, bool
+--C++11’s additions: unsigned long long and long long
+--The climits file, which represents system limits for various integer types
+--Numeric literals (constants) of various integer types (数字字面常量)
+--Using the const qualifier to create symbolic constants
+--C++’s built-in floating-point types: float, double,and long double
+--The cfloat file, which represents system limits for various floating-point types
+--Numeric literals of various floating-point types
+--C++’s arithmetic operators
+--Automatic type conversions
+--Forced type conversions (type casts)

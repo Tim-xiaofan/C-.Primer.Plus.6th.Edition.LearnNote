@@ -1,0 +1,4 @@
+1.//注释，大小写敏感，拼写检查
+2.可以使用C语言的标准输入输出
+3.int main(int argc, char *argv[])程序入口。
+4.A C++ program is a collection of functions,and each function is a collection of statements
