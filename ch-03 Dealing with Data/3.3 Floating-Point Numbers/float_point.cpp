@@ -18,5 +18,6 @@ int main(int argc, char *argv[])
 	cout << "sizeof(float):" << sizeof(float) <<endl;
 	cout << "sizeof(double):" << sizeof(double) <<endl;
 	cout << "sizeof(long double):" << sizeof(long double) <<endl;
+	cout << "sizeof(bool):" << sizeof(bool) <<endl;
 }
 
