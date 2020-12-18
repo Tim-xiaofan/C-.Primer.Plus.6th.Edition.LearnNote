@@ -28,3 +28,6 @@ ch-04 Compound Types/4.3 Introducing the string Class/string_cmp_array
 ch-04 Compound Types/4.3 Introducing the string Class/string_io_line
 ch-04 Compound Types/4.3 Introducing the string Class/string_usage
 ch-04 Compound Types/4.4 Introducing Structures/struct_usage
+ch-04 Compound Types/4.4 Introducing Structures/assign_struct
+ch-04 Compound Types/4.4 Introducing Structures/bit_field
+ch-04 Compound Types/4.4 Introducing Structures/struct_array

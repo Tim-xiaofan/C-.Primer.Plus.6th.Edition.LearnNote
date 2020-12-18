@@ -30,5 +30,6 @@ int main()
 	// pal.name is the name member of the pal variable
 	cout << "You can have both for $";
 	cout << guest.price + pal.price << "!\n";
+	inflatable duck {"Daphne", 0.12, 9.98}; // can omit the = in C++11
 	return 0;
 }
