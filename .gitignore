@@ -31,3 +31,6 @@ ch-04 Compound Types/4.4 Introducing Structures/struct_usage
 ch-04 Compound Types/4.4 Introducing Structures/assign_struct
 ch-04 Compound Types/4.4 Introducing Structures/bit_field
 ch-04 Compound Types/4.4 Introducing Structures/struct_array
+ch-04 Compound Types/4.5 Unions/union_usage
+ch-04 Compound Types/4.6 Enumerations/enum_usage
+ch-04 Compound Types/4.7 Pointers and the Free Store/address_operator
