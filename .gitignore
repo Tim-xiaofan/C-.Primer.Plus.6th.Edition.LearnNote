@@ -34,3 +34,6 @@ ch-04 Compound Types/4.4 Introducing Structures/struct_array
 ch-04 Compound Types/4.5 Unions/union_usage
 ch-04 Compound Types/4.6 Enumerations/enum_usage
 ch-04 Compound Types/4.7 Pointers and the Free Store/address_operator
+ch-04 Compound Types/4.7 Pointers and the Free Store/pointer
+ch-04 Compound Types/4.7 Pointers and the Free Store/pointer_danger
+ch-04 Compound Types/4.7 Pointers and the Free Store/pointer_declare_init
