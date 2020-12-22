@@ -45,3 +45,6 @@ ch-04 Compound Types/4.7 Pointers and the Free Store/core
 ch-04 Compound Types/4.7 Pointers and the Free Store/-Wall
 ch-04 Compound Types/4.8 Pointers, Arrays, and Pointer Arithmetic/addpntrs
 ch-04 Compound Types/4.8 Pointers, Arrays, and Pointer Arithmetic/array_name
+ch-04 Compound Types/4.8 Pointers, Arrays, and Pointer Arithmetic/new_delete
+ch-04 Compound Types/4.8 Pointers, Arrays, and Pointer Arithmetic/new_dynamic_struct
+ch-04 Compound Types/4.8 Pointers, Arrays, and Pointer Arithmetic/pointer_string
