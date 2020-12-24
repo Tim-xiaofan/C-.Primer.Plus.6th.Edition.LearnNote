@@ -1,0 +1,13 @@
+/*20201224 21:33,zyj,GuangDong*/
+//forloop.cpp
+#include <iostream>
+int main()
+{
+	using namespace std;
+	int i; // create a counter
+	// initialize; test ; update
+	for (i = 0; i < 5; i++)
+	  cout << "C++ knows loops.\n";
+	cout << "C++ knows when to stop.\n";
+	return 0;
+}
