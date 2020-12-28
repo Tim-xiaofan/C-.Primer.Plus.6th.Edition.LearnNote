@@ -87,3 +87,9 @@ ch-05 Loops and Relational Expressions/5.05 Loops and Text Input/input_text_idio
 ch-06 Branching Statements and Logical Operators/6.03 The cctype Library of Character Functions/cctypes
 ch-06 Branching Statements and Logical Operators/6.07 Number-Reading Loops/simple_test
 ch-06 Branching Statements and Logical Operators/6.07 Number-Reading Loops/cinfish
+ch-06 Branching Statements and Logical Operators/6.08 Simple File Input-Output/sumafile1
+ch-06 Branching Statements and Logical Operators/6.08 Simple File Input-Output/simple
+ch-06 Branching Statements and Logical Operators/6.08 Simple File Input-Output/sumafile
+ch-06 Branching Statements and Logical Operators/6.08 Simple File Input-Output/outfile
+ch-06 Branching Statements and Logical Operators/6.10 Chapter Review/input_buffer
+ch-06 Branching Statements and Logical Operators/6.10 Chapter Review/count_newlines_spaces
