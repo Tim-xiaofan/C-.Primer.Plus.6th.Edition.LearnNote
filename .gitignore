@@ -124,3 +124,7 @@ ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/thr
 ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/extern/extern
 ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/file scope static/simple
 ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/static_init
+ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/external and internal/file
+ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/const modifier/const
+ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/static_local
+ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/mutable
