@@ -117,3 +117,10 @@ ch-08 Adventures in Functions/8.05 Function Templates/instantiations_and_peciali
 ch-08 Adventures in Functions/8.05 Function Templates/which
 ch-08 Adventures in Functions/8.05 Function Templates/choices
 ch-08 Adventures in Functions/8.05 Function Templates/tempover
+ch-09 Memory Models and Namespaces/9.01 Separate Compilation/coordin/main
+ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/autoscp
+ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/simple
+ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/three_kind_static
+ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/extern/extern
+ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/file scope static/simple
+ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/static_init
