@@ -6,16 +6,17 @@
 #ifdef _WIN32
 #include <Windows.h> 
 
-/** get system version name up 8.1*/ 
+/** get system version name down 8.1*/ 
 #ifdef DOWN
 void win_get_sysname_down(std::string& osname)  
 {  
+	using namespace std;
 	SYSTEM_INFO info;  
 	GetSystemInfo(&info); 
 	OSVERSIONINFOEX os;   
 	os.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);     
 
-	osname = _T("Unknown Microsoft Windows Version");  
+	osname = "Unknown Microsoft Windows Version";  
 
 	if(GetVersionEx((OSVERSIONINFO *)&os))  
 	{   
@@ -28,15 +29,15 @@ void win_get_sysname_down(std::string& osname)
 				{   
 					case 0:  
 						if(os.dwPlatformId==VER_PLATFORM_WIN32_NT)  
-						  osname =_T("Microsoft Windows NT 4.0"); 
+						  osname = "Microsoft Windows NT 4.0"; 
 						else if(os.dwPlatformId==VER_PLATFORM_WIN32_WINDOWS)  
-						  osname =_T("Microsoft Windows 95");  
+						  osname ="Microsoft Windows 95";  
 						break;  
 					case 10:  
-						osname =_T("Microsoft Windows 98");  
+						osname ="Microsoft Windows 98";  
 						break;  
 					case 90:  
-						osname =_T("Microsoft Windows Me");  
+						osname ="Microsoft Windows Me";  
 						break;  
 				}  
 				break;  
@@ -45,23 +46,23 @@ void win_get_sysname_down(std::string& osname)
 				switch(os.dwMinorVersion)
 				{   
 					case 0:  
-						osname =_T("Microsoft Windows 2000"); 
+						osname ="Microsoft Windows 2000"; 
 						break;  
 
 					case 1:  
-						osname =_T("Microsoft Windows XP");
+						osname ="Microsoft Windows XP";
 						break;  
 
 					case 2:  
 						if(os.wProductType==VER_NT_WORKSTATION   
 									&& info.wProcessorArchitecture==PROCESSOR_ARCHITECTURE_AMD64)  
 						{  
-							osname =_T("Microsoft Windows XP Professional x64 Edition");  
+							osname ="Microsoft Windows XP Professional x64 Edition";  
 						}  
 						else if(GetSystemMetrics(SM_SERVERR2)==0)  
-						  osname =_T("Microsoft Windows Server 2003"); 
+						  osname ="Microsoft Windows Server 2003"; 
 						else if(GetSystemMetrics(SM_SERVERR2)!=0)  
-						  osname =_T("Microsoft Windows Server 2003 R2");  
+						  osname ="Microsoft Windows Server 2003 R2";  
 						break;  
 				}  
 				break;  
@@ -71,21 +72,21 @@ void win_get_sysname_down(std::string& osname)
 				{  
 					case 0:  
 						if(os.wProductType == VER_NT_WORKSTATION)  
-						  osname =_T("Microsoft Windows Vista");  
+						  osname ="Microsoft Windows Vista";  
 						else  
-						  osname =_T("Microsoft Windows Server 2008");   
+						  osname ="Microsoft Windows Server 2008";   
 						break;  
 					case 1:  
 						if(os.wProductType == VER_NT_WORKSTATION)  
-						  osname =_T("Microsoft Windows 7");  
+						  osname ="Microsoft Windows 7";  
 						else  
-						  osname =_T("Microsoft Windows Server 2008 R2");  
+						  osname ="Microsoft Windows Server 2008 R2";  
 						break;
 					case 2:
 						if(os.wProductType == VER_NT_WORKSTATION)
-						  osname = _T("Microsoft Windows 8");
+						  osname = "Microsoft Windows 8";
 						else  
-						  osname =_T("Microsoft Windows Server 2012");  
+						  osname = "Microsoft Windows Server 2012";  
 						break;
 				}  
 				break;  
@@ -93,16 +94,17 @@ void win_get_sysname_down(std::string& osname)
 	}
 }
 #else
-/** get system version name up 8.1*/ 
+/** get system version name not down 8.1*/ 
 void win_get_sysname_up(std::string& vname)  
 {  
-	//先判断是否为win8.1或win10  
+	//先判断是否为win8.1或win10 
+	using namespace std; 
 	typedef void(__stdcall*NTPROC)(DWORD*, DWORD*, DWORD*);  
 	HINSTANCE hinst = LoadLibrary("ntdll.dll");  
 	DWORD dwMajor, dwMinor, dwBuildNumber;  
 	NTPROC proc = (NTPROC)GetProcAddress(hinst, "RtlGetNtVersionNumbers");   
 	proc(&dwMajor, &dwMinor, &dwBuildNumber); 
-	vname = _T("Unknown Microsoft Windows Version");  
+	vname = "Unknown Microsoft Windows Version";  
 	cout<<"mainVersion:"<<dwMajor<<";secondVersion:"<<dwMinor<<";buildNumber:"<<dwBuildNumber<<endl;
 	if (dwMajor == 6 && dwMinor == 3)   //win 8.1  
 	{
