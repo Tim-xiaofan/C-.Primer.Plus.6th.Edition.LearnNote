@@ -1,4 +1,6 @@
 *.o
+*.i
+*.s
 *.txt
 *.outch-02/2.1 Setting Out to C++/myfirst
 ch-03 Dealing with Data/3.3 Floating-Point Numbers/3.4 C++ Arithmetic Operators/arith
@@ -128,3 +130,13 @@ ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/ext
 ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/const modifier/const
 ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/static_local
 ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/mutable
+ch-09 Memory Models and Namespaces/9.03 Namespaces/namespace_usage
+ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/new_init
+ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/language linkage/language_linkage
+ch-09 Memory Models and Namespaces/9.02 Storage Duration, Scope, and Linkage/newplace
+app/release_info/release_info
+ch-09 Memory Models and Namespaces/9.03 Namespaces/namespace examples/usenmsp
+ch-09 Memory Models and Namespaces/9.03 Namespaces/namespace_nest
+ch-09 Memory Models and Namespaces/9.03 Namespaces/namespace_addr
+ch-09 Memory Models and Namespaces/9.03 Namespaces/namespace_unnamed
+app/release-info/release_info
