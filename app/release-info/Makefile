@@ -9,13 +9,15 @@ SRCS-y := release_info.cpp main.cpp
 
 ifeq ($(OS),Windows_NT)
 		PLATFORM="Windows"
-endif
-
+		SHELL=powershell.exe
+else 
 ifeq ($(shell uname),Darwin)
 		PLATFORM="MacOS"
-endif
+else 
 ifeq ($(shell uname),Linux)
 		PLATFORM="Unix-Like"
+endif
+endif
 endif
 
 # Add flag 
@@ -26,17 +28,20 @@ $(APP): $(SRCS-y) Makefile
 
 
 ifeq ($(shell uname),Linux)
+SHELL=powershell.exe
 .PHONY: clean
 clean:
+	echo "Linux rm"
 	rm -f *.o
 	rm -f *.exe
 	rm -f $(APP)
-endif
-
+else 
 ifeq ($(OS),Windows_NT)
 .PHONY: clean
 clean:
+	echo "Windows rm"
 	rm -Force *.o
 	rm -Force *.exe
 	rm -Force $(APP)
+endif
 endif
