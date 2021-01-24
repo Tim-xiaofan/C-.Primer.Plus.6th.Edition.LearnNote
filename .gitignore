@@ -2,6 +2,7 @@
 *.i
 *.s
 *.txt
+*.exe
 *.outch-02/2.1 Setting Out to C++/myfirst
 ch-03 Dealing with Data/3.3 Floating-Point Numbers/3.4 C++ Arithmetic Operators/arith
 ch-03 Dealing with Data/3.3 Floating-Point Numbers/floatnum
