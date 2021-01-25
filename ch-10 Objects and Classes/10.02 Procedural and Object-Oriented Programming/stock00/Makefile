@@ -1,11 +1,8 @@
-# SPDX-License-Identifier: BSD-3-Clause
-# Copyright(c) 2010-2014 Intel Corporation
-
 # binary name
-APP = release_info
+APP = stock00
 
 # all source are stored in SRCS-y
-SRCS-y := release_info.cpp main.cpp
+SRCS-y := stock00.cpp main.cpp stock00.h
 
 ifeq ($(OS),Windows_NT)
 		PLATFORM="Windows"

@@ -5,6 +5,26 @@
 #include <iostream>
 #include "stock00.h"
 
+static int count = 0;
+
+Stock::Stock(const std::string &co, long n, double pr)
+{
+	company = co;
+	std::cout << "#" << ++count << ": constructor is excuted\n";
+	if (n < 0)
+	{
+		std::cout << "Number of shares can’t be negative; "
+			<< company << " shares set to 0.\n";
+		shares = 0;
+	}
+	else
+	  shares = n;
+	share_val = pr;
+	set_tot();
+
+}
+
+Stock::~Stock(void){std::cout << "Bye, " << company << std::endl;}
 
 void Stock::acquire(const std::string & co, long n, double pr)
 {
@@ -72,7 +92,7 @@ void Stock::show()
 		cout.setf(ios_base::fixed, ios_base::floatfield);
 	std::streamsize prec = cout.precision(3);
 
-	cout << "Company: " << company
+	cout << "Company: " << "<"<< company << ">"
 		<< " Shares: " << shares << '\n'
 		<< " Share Price: $" << share_val;
 
