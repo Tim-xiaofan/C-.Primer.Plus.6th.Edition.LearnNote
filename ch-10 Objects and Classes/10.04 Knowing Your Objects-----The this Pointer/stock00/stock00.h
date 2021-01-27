@@ -25,6 +25,7 @@ class Stock // class declaration
 		void sell(long num, double price);
 		void update(double price);
 		void show (void) const;
+		const Stock &topval(const Stock &s)const;
 }; // note semicolon at the end
 
 inline void Stock::set_tot(void)

@@ -105,3 +105,8 @@ void Stock::show() const
 	cout.precision(prec);
 	//share_val += 0.1;/*error:read only*/
 }
+
+const Stock& Stock::topval(const Stock &s)const
+{
+	return (s.total_val > total_val) ? s : *this;
+}

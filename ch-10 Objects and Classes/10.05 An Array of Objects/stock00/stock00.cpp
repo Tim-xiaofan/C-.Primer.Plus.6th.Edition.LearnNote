@@ -6,6 +6,7 @@
 #include "stock00.h"
 
 static int count = 0;
+static int count1 = 0;
 
 Stock::Stock(const std::string &co, long n, double pr)
 {
@@ -24,7 +25,11 @@ Stock::Stock(const std::string &co, long n, double pr)
 
 }
 
-Stock::~Stock(void){std::cout << "Bye, " << company << std::endl;}
+Stock::~Stock(void)
+{
+	std::cout << "~" << ++count1 << ": Bye, " 
+		<< company << std::endl;
+}
 
 void Stock::acquire(const std::string & co, long n, double pr)
 {
@@ -104,4 +109,9 @@ void Stock::show() const
 	cout.setf(orig, ios_base::floatfield);
 	cout.precision(prec);
 	//share_val += 0.1;/*error:read only*/
+}
+
+const Stock& Stock::topval(const Stock &s)const
+{
+	return (s.total_val > total_val) ? s : *this;
 }
