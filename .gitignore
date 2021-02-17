@@ -178,3 +178,7 @@ ch-13 Class Inheritance/13.07 Inheritance and Dynamic Memory Allocation/has-DMA/
 ch-13 Class Inheritance/13.08 Class Design Review/not-inherited/not_inherited
 ch-14 Reusing Code in C++/14.01 Classes with Object Members/valarray_test
 ch-14 Reusing Code in C++/14.01 Classes with Object Members/student/studentc
+ch-14 Reusing Code in C++/14.02 Multiple Inheritance/MI0/worker0
+ch-14 Reusing Code in C++/14.02 Multiple Inheritance/MI1/worker0
+ch-14 Reusing Code in C++/14.02 Multiple Inheritance/mi_dominance
+ch-14 Reusing Code in C++/14.03 Private Inheritance/student-PI/studentc
