@@ -7,16 +7,32 @@ class HasFriend
 {
 	public:
 		/** friend to all HasFriend instantiations */
-		friend void counts(); 
+		friend void counts();
+		/** bound template friend */
+		friend void report(HasFriend &)
+		{
+			std::cout << "report: bound template friend\n";
+		}
 };
+
+int main()
+{
+	using std::string;
+	using std::cout;
+	using std::cin;
+	using std::endl;
+
+	HasFriend<string> hfs;
+	report(hfs);
+	return 0;
+}
 
 void counts()
 {
 	std::cout << "counts : friends to all instantiations\n";
 }
 
-int main()
-{
-	HasFriend<string> hfs;
-	return 0;
-}
+//void report(HasFriend<std::string> & hf)
+//{
+//	std::cout << "report: bound template friend to string\n";
+//}
