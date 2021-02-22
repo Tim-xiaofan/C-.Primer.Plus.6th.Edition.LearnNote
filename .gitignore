@@ -198,3 +198,8 @@ ch-14 Reusing Code in C++/14.04 Class Templates/tempparm
 ch-14 Reusing Code in C++/14.04 Class Templates/frnd2tmp
 ch-14 Reusing Code in C++/14.04 Class Templates/tmp2tmp
 ch-14 Reusing Code in C++/14.04 Class Templates/manyfrnd
+debug/zlog/zlog
+ch-15 Friends, Exceptions, and More/15.01 Friends/TV/tv
+ch-15 Friends, Exceptions, and More/15.01 Friends/TV friend member function/tvfm
+ch-15 Friends, Exceptions, and More/15.01 Friends/TV Mutual friends/tv
+ch-15 Friends, Exceptions, and More/15.01 Friends/Queue Nested class/queuetp
