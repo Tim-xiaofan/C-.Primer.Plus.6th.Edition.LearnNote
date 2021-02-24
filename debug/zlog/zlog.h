@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <cstring>
 #include <ctime>
+#include <cstdarg>
 #include <sys/time.h>
 #define DEBUG 0   
 #define ERROR 1
@@ -31,14 +32,18 @@ void event_log(const char *module_name,  int line, const char *log_info, ...)
 {
 	struct timeval tv;
 	struct tm *the_time;
+	va_list va;
+	
+	va_start(va, log_info);
 
 	gettimeofday(&tv, (struct timezone *) NULL);
 	the_time = localtime((time_t *) & (tv.tv_sec));
-	/** [22:57:57.844] [worker.cpp:1507]*/
+	/** [22:57:57.844] [*.cpp:1507]*/
 	fprintf(stdout, "[%02d:%02d:%02d.%03d] [%s:%d] ",
 				the_time->tm_hour, the_time->tm_min, the_time->tm_sec, (int) (tv.tv_usec / 1000), 
 				module_name, line);
-	fprintf(stderr, log_info);
+	vfprintf(stdout, log_info, va);
+	va_end(va);
 	return;
 }
 
@@ -46,13 +51,17 @@ void error_log(const char *module_name,  int line, const char *log_info, ...)
 {
 	struct timeval tv;
 	struct tm *the_time;
+	va_list va;
+	
+	va_start(va, log_info);
 
 	gettimeofday(&tv, (struct timezone *) NULL);
 	the_time = localtime((time_t *) & (tv.tv_sec));
-	/** [22:57:57.844] [worker.cpp:1507]*/
+	/** [22:57:57.844] [*.cpp:1507]*/
 	fprintf(stderr, "[%02d:%02d:%02d.%03d] [%s:%d] ",
 				the_time->tm_hour, the_time->tm_min, the_time->tm_sec, (int) (tv.tv_usec / 1000), 
 				module_name, line);
-	fprintf(stderr, log_info);
+	vfprintf(stderr, log_info, va);
+	va_end(va);
 	return;
 }

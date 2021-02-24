@@ -4,6 +4,7 @@
 *.txt
 *.exe
 *tags
+*core
 *.outch-02/2.1 Setting Out to C++/myfirst
 ch-03 Dealing with Data/3.3 Floating-Point Numbers/3.4 C++ Arithmetic Operators/arith
 ch-03 Dealing with Data/3.3 Floating-Point Numbers/floatnum
@@ -43,7 +44,6 @@ ch-04 Compound Types/4.7 Pointers and the Free Store/pointer_danger
 ch-04 Compound Types/4.7 Pointers and the Free Store/pointer_declare_init
 ch-04 Compound Types/4.7 Pointers and the Free Store/new_usage
 ch-04 Compound Types/4.7 Pointers and the Free Store/delete_usage
-*core
 ch-04 Compound Types/4.7 Pointers and the Free Store/new_dynamic_array
 ch-04 Compound Types/4.7 Pointers and the Free Store/core
 ch-04 Compound Types/4.7 Pointers and the Free Store/-Wall
@@ -203,3 +203,12 @@ ch-15 Friends, Exceptions, and More/15.01 Friends/TV/tv
 ch-15 Friends, Exceptions, and More/15.01 Friends/TV friend member function/tvfm
 ch-15 Friends, Exceptions, and More/15.01 Friends/TV Mutual friends/tv
 ch-15 Friends, Exceptions, and More/15.01 Friends/Queue Nested class/queuetp
+ch-15 Friends, Exceptions, and More/15.03 Exceptions/exception inheritance/sales
+ch-15 Friends, Exceptions, and More/15.03 Exceptions/newexcp
+ch-15 Friends, Exceptions, and More/15.03 Exceptions/unwinding_stack
+ch-15 Friends, Exceptions, and More/15.03 Exceptions/try_catch_exception
+ch-15 Friends, Exceptions, and More/15.03 Exceptions/try_catch
+ch-15 Friends, Exceptions, and More/15.03 Exceptions/abort_test2
+ch-15 Friends, Exceptions, and More/15.03 Exceptions/try_catch_object
+ch-15 Friends, Exceptions, and More/15.03 Exceptions/abort_test
+ch-15 Friends, Exceptions, and More/15.02 Nested Classes/Queue Nested class/queuetp
