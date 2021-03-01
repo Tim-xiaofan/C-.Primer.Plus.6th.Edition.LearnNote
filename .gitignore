@@ -216,3 +216,5 @@ ch-15 Friends, Exceptions, and More/15.03 Exceptions/try_catch_unexpected
 ch-15 Friends, Exceptions, and More/15.04 Runtime Type Identification/rtti1
 ch-15 Friends, Exceptions, and More/15.04 Runtime Type Identification/rtti2
 ch-15 Friends, Exceptions, and More/15.03 Exceptions/core
+ch-15 Friends, Exceptions, and More/15.05 Type Cast Operators/reinterpret
+ch-15 Friends, Exceptions, and More/15.05 Type Cast Operators/constcast
