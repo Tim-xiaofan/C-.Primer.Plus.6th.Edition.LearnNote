@@ -1,10 +1,10 @@
-/* 20210225 22:37, zyj, GuangDong*/
-// rtti1.cpp -- using the RTTI dynamic_cast operator
+/* 20210301 12:36, zyj, GuangDong*/
+// rtti2.cpp -- using dynamic_cast, typeid, and type_info
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-using std::cout;
-
+#include <typeinfo>
+using namespace std;
 class Grand
 {
 	private:
@@ -14,7 +14,6 @@ class Grand
 		virtual void Speak() const { cout << "I am a grand class!\n";}
 		virtual int Value() const { return hold; }
 };
-
 class Superb : public Grand
 {
 	public:
@@ -23,13 +22,12 @@ class Superb : public Grand
 		virtual void Say() const
 		{ cout << "I hold the superb value of " << Value() << "!\n";}
 };
-
 class Magnificent : public Superb
 {
 	private:
 		char ch;
 	public:
-		Magnificent(int h = 0, char c = 'A') : Superb(h), ch(c) {}
+		Magnificent(int h = 0, char cv = 'A') : Superb(h), ch(cv) {}
 		void Speak() const {cout << "I am a magnificent class!!!\n";}
 		void Say() const {cout << "I hold the character " << ch <<
 			" and the integer " << Value() << "!\n"; }
@@ -38,35 +36,36 @@ class Magnificent : public Superb
 Grand * GetOne();
 int main()
 {
-	std::srand(std::time(0));
+
+	cout << "Class Superb = " << typeid(Superb).name() << endl;
+	cout << "Class Magnificent = " << typeid(Magnificent).name() << endl;
+
+	srand(time(0));
 	Grand * pg;
 	Superb * ps;
-	Magnificent *pm;
 	for (int i = 0; i < 5; i++)
 	{
 		pg = GetOne();
-		//pg->Speak();
-		/** test whether it can  cast to */
-		/** mean: try to cast pg to "Superb*", null for cannot*/
-		if((ps = dynamic_cast<Superb *>(pg)))
+		cout << "Now processing type " << typeid(*pg).name() << ".\n";
+		pg->Speak();
+		if( (ps = dynamic_cast<Superb *>(pg)))
 		  ps->Say();
-		if((pm = dynamic_cast<Magnificent *>(pg)))
-		  pm->Say();
+		if (typeid(Magnificent) == typeid(*pg))
+		  cout << "Yes, you're really magnificent.\n\n";
 	}
 	return 0;
 }
 
-Grand * GetOne() // generate one of three kinds of objects randomly
+Grand * GetOne()
 {
 	Grand * p;
-	switch( std::rand() % 3)
+	switch( rand() % 3)
 	{
-		case 0: p = new Grand(std::rand() % 100);
+		case 0: p = new Grand(rand() % 100);
 				break;
-		case 1: p = new Superb(std::rand() % 100);
+		case 1: p = new Superb(rand() % 100);
 				break;
-		case 2: p = new Magnificent(std::rand() % 100,
-							'A' + std::rand() % 26);
+		case 2: p = new Magnificent(rand() % 100, 'A' + rand() % 26);
 				break;
 	}
 	return p;
