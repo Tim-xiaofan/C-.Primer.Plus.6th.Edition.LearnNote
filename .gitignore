@@ -1,7 +1,6 @@
 *.o
 *.i
 *.s
-*.txt
 *.exe
 *tags
 *core
@@ -222,3 +221,5 @@ ch-16 The string Class and the Standard Template Library/16.01 The string Class/
 ch-16 The string Class and the Standard Template Library/16.01 The string Class/str_input
 ch-16 The string Class and the Standard Template Library/16.01 The string Class/str_construct
 ch-16 The string Class and the Standard Template Library/16.01 The string Class/str_file
+ch-16 The string Class and the Standard Template Library/16.01 The string Class/str_relation
+ch-16 The string Class and the Standard Template Library/16.01 The string Class/str_find

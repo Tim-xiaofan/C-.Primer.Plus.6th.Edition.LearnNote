@@ -1,0 +1,28 @@
+size_type find(const string &
+str, size_type pos = 0) const
+Finds the first occurrence of the substring str,
+starting the search at location pos in the invoking
+string. Returns the index of the first character of
+the substring if found and returns string::npos
+otherwise.
+size_type find(const char * s,
+size_type pos = 0) const
+Finds the first occurrence of the substring s,
+starting the search at location pos in the invoking
+string. Returns the index of the first character of
+the substring if found and returns string::npos
+otherwise.
+size_type find(const char * s,
+size_type pos = 0, size_type n)
+Finds the first occurrence of the substring
+consisting of the first n characters in s, starting
+the search at location pos in the invoking string.
+Returns the index of the first character of the
+substring if found and returns string::npos
+otherwise.
+size_type find(char ch, size_type
+pos = 0) const
+Finds the first occurrence of the character ch,
+starting the search at location pos in the invoking
+string. Returns the index of the character if found
+and returns string::npos otherwise.
