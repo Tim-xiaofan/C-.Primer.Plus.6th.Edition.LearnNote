@@ -2,8 +2,10 @@
 // str_npos.cpp
 #include <iostream>
 #include <string>
+#include <climits>
 int main()
 {
 	using namespace std;
-	cout << "string::npos = "<< string::npos << endl;
+	cout << hex << "string::npos = "<< string::npos << endl;
+	cout << hex << "UINT_MAX = " << UINT_MAX << endl;
 }
