@@ -225,3 +225,5 @@ ch-16 The string Class and the Standard Template Library/16.01 The string Class/
 ch-16 The string Class and the Standard Template Library/16.01 The string Class/str_find
 ch-16 The string Class and the Standard Template Library/16.01 The string Class/str_varieties
 ch-16 The string Class and the Standard Template Library/16.01 The string Class/str_autosize
+ch-16 The string Class and the Standard Template Library/16.02 Smart Pointer Template Classes/smrtptrs
+ch-16 The string Class and the Standard Template Library/16.02 Smart Pointer Template Classes/memory_leak
