@@ -227,3 +227,13 @@ ch-16 The string Class and the Standard Template Library/16.01 The string Class/
 ch-16 The string Class and the Standard Template Library/16.01 The string Class/str_autosize
 ch-16 The string Class and the Standard Template Library/16.02 Smart Pointer Template Classes/smrtptrs
 ch-16 The string Class and the Standard Template Library/16.02 Smart Pointer Template Classes/memory_leak
+ch-16 The string Class and the Standard Template Library/16.03 The Standard Template Library/vector/vector_iterator
+ch-16 The string Class and the Standard Template Library/16.03 The Standard Template Library/vector/vector_instantiate
+ch-16 The string Class and the Standard Template Library/16.02 Smart Pointer Template Classes/uniqueptr_poor
+ch-16 The string Class and the Standard Template Library/16.02 Smart Pointer Template Classes/uniqueptr_variant
+ch-16 The string Class and the Standard Template Library/16.02 Smart Pointer Template Classes/core
+ch-16 The string Class and the Standard Template Library/16.02 Smart Pointer Template Classes/sharedptr_good
+ch-16 The string Class and the Standard Template Library/16.02 Smart Pointer Template Classes/autoptr_poor
+ch-16 The string Class and the Standard Template Library/16.02 Smart Pointer Template Classes/smrtptrs_select
+ch-16 The string Class and the Standard Template Library/16.02 Smart Pointer Template Classes/smrtptrs_conversion
+ch-16 The string Class and the Standard Template Library/16.02 Smart Pointer Template Classes/uniqueptr_move
