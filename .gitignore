@@ -237,3 +237,7 @@ ch-16 The string Class and the Standard Template Library/16.02 Smart Pointer Tem
 ch-16 The string Class and the Standard Template Library/16.02 Smart Pointer Template Classes/smrtptrs_select
 ch-16 The string Class and the Standard Template Library/16.02 Smart Pointer Template Classes/smrtptrs_conversion
 ch-16 The string Class and the Standard Template Library/16.02 Smart Pointer Template Classes/uniqueptr_move
+ch-16 The string Class and the Standard Template Library/16.03 The Standard Template Library/vector/vector_rangebasedfor
+ch-16 The string Class and the Standard Template Library/16.03 The Standard Template Library/vector/vector_sort
+ch-16 The string Class and the Standard Template Library/16.03 The Standard Template Library/vector/vector_foreach
+ch-16 The string Class and the Standard Template Library/16.03 The Standard Template Library/vector/vector_randomshuffle
