@@ -241,3 +241,8 @@ ch-16 The string Class and the Standard Template Library/16.03 The Standard Temp
 ch-16 The string Class and the Standard Template Library/16.03 The Standard Template Library/vector/vector_sort
 ch-16 The string Class and the Standard Template Library/16.03 The Standard Template Library/vector/vector_foreach
 ch-16 The string Class and the Standard Template Library/16.03 The Standard Template Library/vector/vector_randomshuffle
+ch-16 The string Class and the Standard Template Library/16.04 Generic Programming/insert_iterator
+ch-16 The string Class and the Standard Template Library/16.04 Generic Programming/istream_iterator
+ch-16 The string Class and the Standard Template Library/16.04 Generic Programming/reverse_iterator
+ch-16 The string Class and the Standard Template Library/16.04 Generic Programming/ostream_iterator
+ch-16 The string Class and the Standard Template Library/16.04 Generic Programming/iterator_copy
