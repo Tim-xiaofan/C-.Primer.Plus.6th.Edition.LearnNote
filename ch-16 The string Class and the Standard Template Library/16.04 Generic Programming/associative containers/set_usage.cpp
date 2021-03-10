@@ -12,7 +12,7 @@
 #include <cstdint>
 #include <set>
 
-#define N 6
+#define N 10
 
 using namespace std;
 
@@ -36,7 +36,7 @@ static void output(const std::string & s) {std::cout << s << " ";}
 
 int main()
 {
-	string s1[N] = {"buffoon", "thinkers", "for", "heavy", "can", "for"};
+	string s1[N] = {"buffoon", "thinkers", "for", "heavy", "can", "for", "July", "Aguest", "May", "February"};
 	set<string, less<string> > A(s1, s1 + N); // initialize set A using a range from array
 	ostream_iterator<string, char> out(cout, " ");
 	cout << "set A : ";
@@ -53,11 +53,27 @@ int main()
 	set_union(A.begin(), A.end(), B.begin(), B.end(), out);
 	cout << endl;
 
+	set<string, less<string> > C;
 	/** must use ouput iterator*/
-	set<string, less<string> > C(months, months + 12);
 	insert_iterator<set<string> > insertor(C, C.begin());
 	cout << "A U B : ";
 	set_union(A.begin(), A.end(), B.begin(), B.end(), insertor);
 	copy(C.begin(), C.end(), out);
+	cout << endl;
+
+	/** sets intersection*/
+	set<string> D;
+	insert_iterator<set<string> > insertor1(D, D.begin());
+	cout << "A and B : ";
+	set_intersection(A.begin(), A.end(), B.begin(), B.end(), insertor1);
+	copy(D.begin(), D.end(), out);
+	cout << endl;
+	
+	/** sets difference*/
+	set<string> E;
+	insert_iterator<set<string> > insertor2(E, E.begin());
+	cout << "A B difference: ";
+	set_difference(A.begin(), A.end(), B.begin(), B.end(), insertor2);
+	copy(E.begin(), E.end(), out);
 	cout << endl;
 }
