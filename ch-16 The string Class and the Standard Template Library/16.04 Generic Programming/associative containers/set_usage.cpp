@@ -76,4 +76,13 @@ int main()
 	set_difference(A.begin(), A.end(), B.begin(), B.end(), insertor2);
 	copy(E.begin(), E.end(), out);
 	cout << endl;
+
+	/** not need a location because sorting determines where additions to a set go*/
+	set<string> F;
+	string s("Tom");
+	F.insert(s);
+	F.insert(months, months + 12);
+	cout << "F : ";
+	copy(F.begin(), F.end(), out);
+	cout << endl;
 }
