@@ -250,3 +250,7 @@ ch-16 The string Class and the Standard Template Library/16.04 Generic Programmi
 ch-16 The string Class and the Standard Template Library/16.04 Generic Programming/sequences/list
 ch-16 The string Class and the Standard Template Library/16.04 Generic Programming/associative containers/set_ops
 ch-16 The string Class and the Standard Template Library/16.04 Generic Programming/associative containers/multimap_usage
+ch-16 The string Class and the Standard Template Library/16.04 Generic Programming/associative containers/multimap
+ch-16 The string Class and the Standard Template Library/16.05 Function Objects (a.k.a. Functors)/functor
+ch-16 The string Class and the Standard Template Library/16.05 Function Objects (a.k.a. Functors)/function_likely
+ch-16 The string Class and the Standard Template Library/16.05 Function Objects (a.k.a. Functors)/concept_predicate
