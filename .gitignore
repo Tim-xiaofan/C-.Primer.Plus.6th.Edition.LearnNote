@@ -255,3 +255,6 @@ ch-16 The string Class and the Standard Template Library/16.05 Function Objects 
 ch-16 The string Class and the Standard Template Library/16.05 Function Objects (a.k.a. Functors)/function_likely
 ch-16 The string Class and the Standard Template Library/16.05 Function Objects (a.k.a. Functors)/concept_predicate
 ch-16 The string Class and the Standard Template Library/16.05 Function Objects (a.k.a. Functors)/predefined_functors
+ch-16 The string Class and the Standard Template Library/16.05 Function Objects (a.k.a. Functors)/adaptable_adapter
+ch-16 The string Class and the Standard Template Library/16.05 Function Objects (a.k.a. Functors)/funadap
+ch-16 The string Class and the Standard Template Library/16.06 Algorithms/general_properties
