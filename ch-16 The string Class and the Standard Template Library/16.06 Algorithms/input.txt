@@ -1,1 +1,2 @@
-There is an easier way that avoids this problem
+There is an easier way that avoids this problem you can use one that converts a string to lowercase 
+Get the number of times each word appears in the input
