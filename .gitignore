@@ -268,3 +268,6 @@ ch-16 The string Class and the Standard Template Library/16.07 Other Libraries/v
 ch-16 The string Class and the Standard Template Library/16.07 Other Libraries/array_template
 ch-16 The string Class and the Standard Template Library/16.07 Other Libraries/initializer_list_usage
 ch-16 The string Class and the Standard Template Library/16.07 Other Libraries/initializer_list
+ch-17 Input, Output, and Files/17.01 An Overview of C++ Input and Output/simple
+ch-17 Input, Output, and Files/17.02 Output with cout/insertion_operator
+ch-17 Input, Output, and Files/17.02 Output with cout/other_output_methods
