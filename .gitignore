@@ -271,3 +271,15 @@ ch-16 The string Class and the Standard Template Library/16.07 Other Libraries/i
 ch-17 Input, Output, and Files/17.01 An Overview of C++ Input and Output/simple
 ch-17 Input, Output, and Files/17.02 Output with cout/insertion_operator
 ch-17 Input, Output, and Files/17.02 Output with cout/other_output_methods
+ch-17 Input, Output, and Files/17.02 Output with cout/field_width
+ch-17 Input, Output, and Files/17.02 Output with cout/show_pointer
+ch-17 Input, Output, and Files/17.02 Output with cout/flush
+ch-17 Input, Output, and Files/17.02 Output with cout/write
+ch-17 Input, Output, and Files/17.02 Output with cout/unsetf
+ch-17 Input, Output, and Files/17.02 Output with cout/fill
+ch-17 Input, Output, and Files/17.02 Output with cout/number_base
+ch-17 Input, Output, and Files/17.02 Output with cout/setf2
+ch-17 Input, Output, and Files/17.02 Output with cout/setf
+ch-17 Input, Output, and Files/17.02 Output with cout/precise
+ch-17 Input, Output, and Files/17.02 Output with cout/iomanip
+ch-17 Input, Output, and Files/17.02 Output with cout/format_default
