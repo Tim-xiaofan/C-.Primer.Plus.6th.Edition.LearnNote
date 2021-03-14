@@ -283,3 +283,8 @@ ch-17 Input, Output, and Files/17.02 Output with cout/setf
 ch-17 Input, Output, and Files/17.02 Output with cout/precise
 ch-17 Input, Output, and Files/17.02 Output with cout/iomanip
 ch-17 Input, Output, and Files/17.02 Output with cout/format_default
+ch-17 Input, Output, and Files/17.03 Input with cin/string_input
+ch-17 Input, Output, and Files/17.03 Input with cin/cin_exception
+ch-17 Input, Output, and Files/17.03 Input with cin/character_input
+ch-17 Input, Output, and Files/17.03 Input with cin/views_input
+ch-17 Input, Output, and Files/17.03 Input with cin/cin_check
