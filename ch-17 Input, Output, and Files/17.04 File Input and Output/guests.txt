@@ -1,0 +1,14 @@
+Let’s look at a program that appends data to the end of a file.The program maintains a file
+that contains a guest list.When the program begins, it displays the current contents of the
+file, if it exists. It can use the is_open() method after attempting to open the file to check
+whether the file exists. Next, the program opens the file for output, using the
+ios_base::app mode.Then it solicits input from the keyboard to add to the file. Finally,
+the program displays the revised file contents. Listing 17.18 illustrates how to accomplish
+these goals. Note how the program uses the is_open() method to test whether the file
+has been opened successfully
+Genghis Kant
+Hank Attila
+Charles Bigg
+Genghis Kant
+Hank Attila
+Charles Bigg
