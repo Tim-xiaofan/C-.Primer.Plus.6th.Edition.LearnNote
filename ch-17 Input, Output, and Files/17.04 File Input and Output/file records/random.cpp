@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iomanip>
 #include <cstdlib> // for exit()
+#include <cstring> // memcpy
 #include "random.h"
 
 using namespace std;
@@ -56,7 +57,7 @@ random_list(const char *filename, uint32_t place)
 int 
 random_query(const char *filename, uint32_t place, struct planet &pl)
 {
-	uint32_t cur, total;
+	uint32_t total;
 	ifstream fin(filename);
 
 	if(fin.is_open() == false)
@@ -65,7 +66,7 @@ random_query(const char *filename, uint32_t place, struct planet &pl)
 		return -1;
 	}
 
-	cur =fin.tellg();
+	//cur =fin.tellg();
 	//fin.seekg(ios_base::end);
 	//total = fin.tellg();
 	total =  file_size(filename);
@@ -74,6 +75,7 @@ random_query(const char *filename, uint32_t place, struct planet &pl)
 	if(place * sizeof(struct planet) >= total)
 	{
 		cout << "out of flie" << endl;
+		fin.close();
 		return -1;
 	}
 
@@ -82,55 +84,99 @@ random_query(const char *filename, uint32_t place, struct planet &pl)
 	if(!fin.read((char *) &pl, sizeof(struct planet)))
 	{
 		cout<< "random_query : read failed";
+		fin.close();
+		return -1;
 	}
+	
+	fin.close();
+	return 0;
 	//planet_display(pl);
 	//cout << "random_query: reset location to " << cur << endl;
 
-	if(fin.eof())
-	{
-		fin.clear(); // clear eof flag
-		fin.seekg(cur);/** recover filr location*/
-		return 0; /** reach eof if good*/
-	}
+	//if(fin.eof())
+	//{
+	//	fin.clear(); // clear eof flag
+	//	fin.seekg(cur);/** recover filr location*/
+	//	return 0; /** reach eof if good*/
+	//}
 
-	if(!fin)
-	{
-		cerr << "random_query:Error in reading.\n";
-		exit(EXIT_FAILURE);
-	}
+	//if(!fin)
+	//{
+	//	cerr << "random_query:Error in reading.\n";
+	//	exit(EXIT_FAILURE);
+	//}
 	return 0;
 }
 
 int 
-random_insert(const char *filename, uint32_t place, struct planet & pl)
+random_insert(const char *filename, int32_t place, struct planet & pl)
 {
-	uint32_t cur, total;
-	ofstream fout(filename, ios_base::app);
+	uint32_t total, ct;
+	streampos location;
+	int i;
+	planet tmp;
+	fstream finout(filename, ios_base::in | ios_base::out);
 
-	if(fout.is_open() == false)
+	if(finout.is_open() == false)
 	{
 		cout << "file is not open" << endl;
 		return -1;
 	}
 
-	cur =fout.tellp();
-	fout.seekp(ios_base::end);
-	total = fout.tellp();
+	//finout.seekp(0, ios_base::end);
+	//total = finout.tellp();
+	total = file_size(filename);
+	cout << filename << " is " << total  << " byte"<< endl;
 	/** check place*/
+	if(place < 0) place =0;
 	if(place * sizeof(struct planet) >= total)
-	{
-		cout << "random_insert:out of flie" << endl;
-		return -1;
+	{/** append to file end*/
+		cout << "random_insert:append to file end" << endl;
+		finout.seekp(0, ios_base::end);/** go to the end of the file*/
+		//cout << finout.tellp() << endl;
+		if(!finout.write((char*) &pl, sizeof(struct planet)))
+		{
+			finout.close();
+			cout << "random_insert: write failed\n";
+			return -1;
+		}
+		finout.close();
 	}
-	return -1;
+	else
+	{/** move records between[place, ct] step back and insert*/
+		ct = total / sizeof(struct planet);
+		//cout << "ct = " << ct << endl;
+		//cout << "place = " << place << endl;
+		
+		/** buffer records from place one to last one */
+		int buf_len = (ct - place) * sizeof(planet);
+		char *buf = new char[buf_len];
+		location = place * sizeof(struct planet);
+		finout.seekg(location);
+		finout.read(buf, buf_len);
+		
+		finout.seekp(location);
+		//cout << "insert location : " << finout.tellp() << endl;
+		finout.write((char *) &pl, sizeof(planet));
+		//cout << "after insert: \n";
+		//finout.flush();
+		//random_list(filename);
+
+		/** rewrite records int buf to file */
+		finout.write(buf, buf_len);
+		//cout << "after recover: \n";
+		finout.flush();
+		//random_list(filename);
+	}
+	return 0;
 }
 
-int random_delete(const char *filename, uint32_t palce)
+int random_delete(const char *filename, int32_t palce)
 {
 	return -1;
 }
 
-int random_alter(const char *filename, uint32_t palce)
+int random_alter(const char *filename, int32_t palce)
 {
 	return -1;
 }
@@ -142,13 +188,19 @@ int main()
 	planet pl;
 	cout << fixed << right;
 
-	fstream finout; // read and write streams
-	finout.open(file, ios::in | ios::out |ios::binary);
-
+	cout << "origin content : \n";
 	random_list(file);
-	random_query(file, 4, pl);
-	cout << "0 recover : \n";
-	planet_display(pl);
+	//if(random_query(file, 4, pl) == 0)
+	//{
+	//	cout << "4 recover : \n";
+	//	planet_display(pl);
+	//}
 
-	random_insert(file, 0, pl);
+	memcpy(pl.name, "S", 2);
+	pl.population = 56;
+	pl.g = 78;
+	random_insert(file, 4, pl);
+	
+	cout << "new content : \n";
+	random_list(file);
 }
