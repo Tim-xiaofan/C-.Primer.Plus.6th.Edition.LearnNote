@@ -9,6 +9,15 @@
 #include <cstdlib> // for exit()
 #include <cstdint> 
 
+#include <sys/stat.h>
+/** get file size*/
+inline int file_size(const char* filename)
+{
+    struct stat statbuf;
+    stat(filename,&statbuf);
+    return statbuf.st_size;
+}
+
 #define LIM 20
 
 inline void eatline() { while (std::cin.get() != '\n') continue; }
@@ -21,14 +30,14 @@ struct planet
 
 const char * file = "planets.dat";
 
-void random_list(std::fstream & fin, uint32_t place = 0);
+void random_list(const char *filename, uint32_t place = 0);
 
-int random_query(std::fstream & fin, uint32_t place, struct planet &pl);
+int random_query(const char *filename, uint32_t place, struct planet &pl);
 
-int random_insert(std::ofstream & out, uint32_t palce);
+int random_insert(const char *filename, uint32_t palce, struct planet & pl);
 
-int random_delete(std::ofstream & out, uint32_t palce);
+int random_delete(const char *filename, uint32_t palce);
 
-int random_alter(std::ofstream & out, uint32_t palce);
+int random_alter(const char *filename, uint32_t palce);
 
 #endif

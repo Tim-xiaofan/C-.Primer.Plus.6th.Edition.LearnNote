@@ -16,9 +16,10 @@ void planet_display(const struct planet & pl)
 }
 
 void 
-random_list(std::fstream & fin, uint32_t place)
+random_list(const char *filename, uint32_t place)
 {
 	uint32_t cur, ct;
+	ifstream fin(filename);
 
 	if(fin.is_open() == false)
 	{
@@ -43,6 +44,7 @@ random_list(std::fstream & fin, uint32_t place)
 	{
 		fin.clear(); // clear eof flag
 		fin.seekg(cur);/** recover filr location*/
+		//cout << "random_list: reset location to " << cur << endl;
 	}
 	else
 	{
@@ -52,9 +54,10 @@ random_list(std::fstream & fin, uint32_t place)
 }
 
 int 
-random_query(std::fstream & fin, uint32_t place, struct planet &pl)
+random_query(const char *filename, uint32_t place, struct planet &pl)
 {
 	uint32_t cur, total;
+	ifstream fin(filename);
 
 	if(fin.is_open() == false)
 	{
@@ -63,8 +66,10 @@ random_query(std::fstream & fin, uint32_t place, struct planet &pl)
 	}
 
 	cur =fin.tellg();
-	fin.seekg(ios_base::end);
-	total = fin.tellg();
+	//fin.seekg(ios_base::end);
+	//total = fin.tellg();
+	total =  file_size(filename);
+	cout << filename << " is " << total  << " byte"<< endl;
 	/** check place*/
 	if(place * sizeof(struct planet) >= total)
 	{
@@ -72,26 +77,60 @@ random_query(std::fstream & fin, uint32_t place, struct planet &pl)
 		return -1;
 	}
 
-	fin.read((char *) &pl, sizeof(struct planet));
+	/** set location and read*/
+	fin.seekg(place * sizeof(struct planet));
+	if(!fin.read((char *) &pl, sizeof(struct planet)))
+	{
+		cout<< "random_query : read failed";
+	}
+	//planet_display(pl);
+	//cout << "random_query: reset location to " << cur << endl;
+
 	if(fin.eof())
 	{
 		fin.clear(); // clear eof flag
 		fin.seekg(cur);/** recover filr location*/
+		return 0; /** reach eof if good*/
+	}
+
+	if(!fin)
+	{
+		cerr << "random_query:Error in reading.\n";
+		exit(EXIT_FAILURE);
 	}
 	return 0;
 }
 
-int random_insert(std::ofstream & fout, uint32_t palce)
+int 
+random_insert(const char *filename, uint32_t place, struct planet & pl)
+{
+	uint32_t cur, total;
+	ofstream fout(filename, ios_base::app);
+
+	if(fout.is_open() == false)
+	{
+		cout << "file is not open" << endl;
+		return -1;
+	}
+
+	cur =fout.tellp();
+	fout.seekp(ios_base::end);
+	total = fout.tellp();
+	/** check place*/
+	if(place * sizeof(struct planet) >= total)
+	{
+		cout << "random_insert:out of flie" << endl;
+		return -1;
+	}
+	return -1;
+}
+
+int random_delete(const char *filename, uint32_t palce)
 {
 	return -1;
 }
 
-int random_delete(std::ofstream & fout, uint32_t palce)
-{
-	return -1;
-}
-
-int random_alter(std::fstream & fout, uint32_t palce)
+int random_alter(const char *filename, uint32_t palce)
 {
 	return -1;
 }
@@ -104,10 +143,12 @@ int main()
 	cout << fixed << right;
 
 	fstream finout; // read and write streams
-	finout.open(file,ios::in | ios::out |ios::binary);
+	finout.open(file, ios::in | ios::out |ios::binary);
 
-	random_list(finout);
-	random_query(finout, 0, pl);
-	cout << "0 recover : ";
+	random_list(file);
+	random_query(file, 4, pl);
+	cout << "0 recover : \n";
 	planet_display(pl);
+
+	random_insert(file, 0, pl);
 }
