@@ -5,6 +5,8 @@
 #include <iomanip>
 #include <cstdlib> // for exit()
 #include <cstring> // memcpy
+#include <unistd.h> // for truncate
+#include <sys/types.h>
 #include "random.h"
 
 using namespace std;
@@ -20,6 +22,13 @@ void
 random_list(const char *filename, uint32_t place)
 {
 	uint32_t cur, ct;
+
+	if(file_size(filename) == 0)
+	{
+		cout << "empty file\n";
+		return;
+	}
+
 	ifstream fin(filename);
 
 	if(fin.is_open() == false)
@@ -113,8 +122,6 @@ random_insert(const char *filename, int32_t place, struct planet & pl)
 {
 	uint32_t total, ct;
 	streampos location;
-	int i;
-	planet tmp;
 	fstream finout(filename, ios_base::in | ios_base::out);
 
 	if(finout.is_open() == false)
@@ -171,9 +178,60 @@ random_insert(const char *filename, int32_t place, struct planet & pl)
 	return 0;
 }
 
-int random_delete(const char *filename, int32_t palce)
+int random_delete(const char *filename, int32_t place)
 {
-	return -1;
+	uint32_t total, ct, buf_len;
+	char *buf;
+	streampos location;
+	fstream finout(filename, ios_base::in | ios_base::out);
+
+	if(finout.is_open() == false)
+	{
+		cout << "file is not open" << endl;
+		return -1;
+	}
+	total = file_size(filename);
+	cout << filename << " is " << total  << " byte."<< endl;
+	ct = total / sizeof(planet);
+	cout << "There are " << ct  << " records." << endl;
+
+	/** check place*/
+	if(place < 0 || (uint32_t)place >= ct)
+	{
+		cout << "invalid place " 
+			<< place << endl;
+		return -1;
+	}
+
+	/** read and move */
+	buf_len = (ct - place - 1) * sizeof(planet);
+	if(buf_len == 0)
+	{/** rm last record, just truncate*/
+		truncate(filename, total - sizeof(planet));
+		//cout << "after truncate, file is " 
+		//	<< file_size(filename) << " bytes\n";
+	}
+	else
+	{
+		/** FIXME: we need to do something when file size is huge*/
+		buf = new char[buf_len];
+		/** buffer record behind place in buf*/
+		location = (place + 1) * sizeof(planet);
+		finout.seekg(location);
+		//cout << "read location is " << finout.tellg() << endl;
+		finout.read(buf, buf_len);
+		/** truncate file */
+		truncate(filename, total - sizeof(planet) - buf_len);
+		//cout << "after truncate, file is " 
+		//	<< file_size(filename) << " bytes\n";
+		/** rewrite records in buf*/
+		location = place * sizeof(planet);
+		finout.seekp(location);
+		//cout << "write location is " << finout.tellp() << endl;
+		finout.write(buf, buf_len);
+		finout.flush();
+	}
+	return 0;
 }
 
 int random_alter(const char *filename, int32_t palce)
@@ -185,7 +243,10 @@ int random_alter(const char *filename, int32_t palce)
 int main()
 {
 	using namespace std;
+	
 	planet pl;
+	int place;
+	
 	cout << fixed << right;
 
 	cout << "origin content : \n";
@@ -196,11 +257,27 @@ int main()
 	//	planet_display(pl);
 	//}
 
-	memcpy(pl.name, "S", 2);
-	pl.population = 56;
-	pl.g = 78;
-	random_insert(file, 4, pl);
-	
-	cout << "new content : \n";
+	//cout << "enter the planet' name : ";
+	//cin.get(pl.name, LIM);
+	//eatline();
+	//cout << "enter the planet's population : ";
+	//cin >> pl.population;
+	//eatline();
+	//cout << "enter the planet's gravity : ";
+	//cin >> pl.g;
+	//eatline();
+	//cout << "enter place to insert:";
+	//cin >> place;
+	//eatline();
+	//random_insert(file, place, pl);
+	//
+	//cout << "after insert : \n";
+	//random_list(file);
+
+	cout << "select record to delete:";
+	cin >> place;
+	eatline();
+	random_delete(file, place);
+	cout << "after delete : \n";
 	random_list(file);
 }
