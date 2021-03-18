@@ -5,7 +5,7 @@
 APP = random
 
 # all source are stored in SRCS-y
-SRCS-y := random.cpp
+SRCS-y := random.cpp main.cpp
 
 ifeq ($(OS),Windows_NT)
 		PLATFORM="Windows"

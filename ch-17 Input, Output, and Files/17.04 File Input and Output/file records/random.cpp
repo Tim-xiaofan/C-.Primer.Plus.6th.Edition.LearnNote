@@ -234,50 +234,32 @@ int random_delete(const char *filename, int32_t place)
 	return 0;
 }
 
-int random_alter(const char *filename, int32_t palce)
+int random_alter(const char *filename, int32_t place, const planet &pl)
 {
-	return -1;
-}
+	uint32_t total, ct;
+	streampos location;
+	fstream finout(filename, ios_base::in | ios_base::out);
 
+	if(finout.is_open() == false)
+	{
+		cout << filename << "is not open" << endl;
+		return -1;
+	}
+	total = file_size(filename);
+	cout << filename << " is " << total  << " byte."<< endl;
+	ct = total / sizeof(planet);
+	cout << "There are " << ct  << " records." << endl;
+	/** check place*/
+	if(place < 0 || (uint32_t)place >= ct)
+	{
+		cout << "invalid place " 
+			<< place << endl;
+		return -1;
+	}
 
-int main()
-{
-	using namespace std;
-	
-	planet pl;
-	int place;
-	
-	cout << fixed << right;
-
-	cout << "origin content : \n";
-	random_list(file);
-	//if(random_query(file, 4, pl) == 0)
-	//{
-	//	cout << "4 recover : \n";
-	//	planet_display(pl);
-	//}
-
-	//cout << "enter the planet' name : ";
-	//cin.get(pl.name, LIM);
-	//eatline();
-	//cout << "enter the planet's population : ";
-	//cin >> pl.population;
-	//eatline();
-	//cout << "enter the planet's gravity : ";
-	//cin >> pl.g;
-	//eatline();
-	//cout << "enter place to insert:";
-	//cin >> place;
-	//eatline();
-	//random_insert(file, place, pl);
-	//
-	//cout << "after insert : \n";
-	//random_list(file);
-
-	cout << "select record to delete:";
-	cin >> place;
-	eatline();
-	random_delete(file, place);
-	cout << "after delete : \n";
-	random_list(file);
+	location = place * sizeof(planet);
+	finout.seekp(location);
+	cout << "alter location :" << finout.tellp() << endl;
+	finout.write((char *) &pl, sizeof(planet));
+	return 0;
 }

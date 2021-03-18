@@ -297,3 +297,6 @@ ch-17 Input, Output, and Files/17.04 File Input and Output/append
 ch-17 Input, Output, and Files/17.04 File Input and Output/binary
 ch-17 Input, Output, and Files/17.04 File Input and Output/seekg
 ch-17 Input, Output, and Files/17.04 File Input and Output/file records/random
+ch-17 Input, Output, and Files/17.04 File Input and Output/temporary_file
+ch-17 Input, Output, and Files/17.05 Incore Formatting/strout
+ch-17 Input, Output, and Files/17.05 Incore Formatting/strin

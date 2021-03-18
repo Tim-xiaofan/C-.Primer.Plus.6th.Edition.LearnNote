@@ -28,7 +28,6 @@ struct planet
 	double g; // its acceleration of gravity
 };
 
-const char * file = "planets.dat";
 
 void random_list(const char *filename, uint32_t place = 0);
 
@@ -38,6 +37,6 @@ int random_insert(const char *filename, int32_t palce, struct planet & pl);
 
 int random_delete(const char *filename, int32_t palce);
 
-int random_alter(const char *filename, int32_t palce);
+int random_alter(const char *filename, int32_t palce, const planet & pl);
 
 #endif
