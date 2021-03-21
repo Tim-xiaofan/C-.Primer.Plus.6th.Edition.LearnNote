@@ -306,3 +306,17 @@ ch-18 Visiting with the New C++ Standard/18.01 C++11 Features Revisited/initiali
 ch-18 Visiting with the New C++ Standard/18.01 C++11 Features Revisited/newtypes
 ch-18 Visiting with the New C++ Standard/18.01 C++11 Features Revisited/smart_ptrs
 ch-18 Visiting with the New C++ Standard/18.01 C++11 Features Revisited/scoped_enumerations
+ch-18 Visiting with the New C++ Standard/18.03 New Class Features/delegating_constructors
+ch-18 Visiting with the New C++ Standard/18.03 New Class Features/inheriting_constructors
+ch-18 Visiting with the New C++ Standard/18.04 Lambda Functions/lambda1
+ch-18 Visiting with the New C++ Standard/18.04 Lambda Functions/simple
+ch-18 Visiting with the New C++ Standard/18.04 Lambda Functions/lambda0
+ch-18 Visiting with the New C++ Standard/18.06 Variadic Templates/variadic2
+ch-18 Visiting with the New C++ Standard/18.06 Variadic Templates/variadic1
+ch-18 Visiting with the New C++ Standard/18.06 Variadic Templates/simple
+ch-18 Visiting with the New C++ Standard/18.01 C++11 Features Revisited/rvref
+ch-18 Visiting with the New C++ Standard/18.01 C++11 Features Revisited/rvalue_reference
+ch-18 Visiting with the New C++ Standard/18.02 Move Semantics and the Rvalue Reference/simple
+ch-18 Visiting with the New C++ Standard/18.02 Move Semantics and the Rvalue Reference/useless
+ch-18 Visiting with the New C++ Standard/18.05 Wrappers/template inefficiencies/callable
+ch-18 Visiting with the New C++ Standard/18.05 Wrappers/fixing inefficiencies/wrapped
