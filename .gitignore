@@ -322,3 +322,7 @@ ch-18 Visiting with the New C++ Standard/18.05 Wrappers/template inefficiencies/
 ch-18 Visiting with the New C++ Standard/18.05 Wrappers/fixing inefficiencies/wrapped
 ch-18 Visiting with the New C++ Standard/18.07 Language Change/using boost/lexcast
 further/001 move constructors and inheritance/move_inheritance
+further/0004 implement of my predicate/predicate_implement
+further/0003 virtual class and function parameter/abc_param
+further/0002 STL list 
+further/0001 move constructors and inheritance/move_inheritance
