@@ -328,3 +328,4 @@ further/0002 STL list
 further/0001 move constructors and inheritance/move_inheritance
 further/0005 Template Classes and Friend Function Details/approach1
 further/0005 Template Classes and Friend Function Details/approach3
+further/0006 rvalue reference and lvalue refrence/rlref
