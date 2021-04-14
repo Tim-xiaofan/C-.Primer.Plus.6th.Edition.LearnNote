@@ -9,8 +9,9 @@ int main()
 	/** traditional lvalue reference*/
 	int a = 1;
 	int & ra = a; 
+	int a1 = ra;
 	ra = 2;
-	cout << a << ","<< ra << endl;
+	cout << a << "," << ra << "," << a1<< endl;
 	//int & ra1;/** error : declared as reference but not initialized*/
 	//int & var = 10 ;/** error cannot bind non-const lvalue reference of type ‘int&’ to an rvalue of type ‘int’*/
 	const int & var = 10;/** ok*/
