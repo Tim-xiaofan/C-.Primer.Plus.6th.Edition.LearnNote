@@ -331,3 +331,5 @@ further/0005 Template Classes and Friend Function Details/approach3
 further/0006 rvalue reference and lvalue refrence/rlref
 further/0007 template function in template class/tfintc
 further/0008 takes a functor as parameter/fasparam
+further/0009 C++11 styled callbacks/fasparam
+further/0009 C++11 styled callbacks/callbacks

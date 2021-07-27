@@ -5,12 +5,13 @@
 
 using std::cout;
 using std::endl;
+	
+static int a = 0;
 
 template<typename UnaryOperator>
 void foo(const UnaryOperator & fun)
 {
-	int a = 0;
-    fun(a);
+    fun(a++);
 }
 
 void f(int a) {cout << a <<" funtion \n";}
