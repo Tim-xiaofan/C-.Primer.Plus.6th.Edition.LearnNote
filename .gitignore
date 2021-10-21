@@ -333,3 +333,7 @@ further/0007 template function in template class/tfintc
 further/0008 takes a functor as parameter/fasparam
 further/0009 C++11 styled callbacks/fasparam
 further/0009 C++11 styled callbacks/callbacks
+ch-04 Compound Types/4.02 Strings/string
+further/0009 C++11 style callbacks/fasparam
+further/0009 C++11 style callbacks/callbacks
+further/0010 line--get and getline/line
