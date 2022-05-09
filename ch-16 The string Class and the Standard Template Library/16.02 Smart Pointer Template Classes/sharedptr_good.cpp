@@ -25,7 +25,7 @@ int main()
 	shared_ptr<string> pwin;
 	shared_ptr<int> pi (new int(15));
 	cout << "*pi = " << *pi << endl;
-	pwin = films[2]; /** just increase cout*/
+	pwin = films[2]; /** just increase count*/
 	cout << "The nominees for best avian baseball film are\n";
 	for (int i = 0; i < 5; i++)
 	  cout << *films[i] << endl;

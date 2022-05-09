@@ -10,7 +10,7 @@ int main()
 	shared_ptr<double> pd;
 	double *p_reg = new double;
 	//pd = p_reg; // not allowed (implicit conversion)
-	pd = shared_ptr<double>(p_reg); // allowed (explicit conversion
+	pd = shared_ptr<double>(p_reg); // allowed (explicit conversion)
 
 	//shared_ptr<double> pshared = p_reg; // not allowed (implicit conversion)
 	shared_ptr<double> pshared(p_reg); // allowed (explicit conversion)

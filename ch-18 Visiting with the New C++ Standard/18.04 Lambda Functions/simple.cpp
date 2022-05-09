@@ -26,7 +26,7 @@ class f_mod
 		bool operator()(int x){ return (x % _dv == 0); }
 };
 
-int main()
+int main(int argc, char *argv[])
 {
 	std::vector<int> numbers(SIZE);
 	srand(time(NULL));
@@ -34,6 +34,7 @@ int main()
 	ostream_iterator<int, char> out(cout, " ");
 	int count3, count13;
 
+    cout << "numbers: ";
 	copy(numbers.begin(), numbers.end(), out);
 	cout << endl;
 

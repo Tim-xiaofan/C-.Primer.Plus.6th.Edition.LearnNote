@@ -15,13 +15,14 @@ int main()
 		auto_ptr<string> (new string("Goose Eggs"))
 	};
 	auto_ptr<string> pwin;
-	auto_ptr<int> pi (new int(15));
+	auto_ptr<int> pi(new int(15));
 	cout << "*pi = " << *pi << endl;
-	pwin = films[2]; // films[2] loses ownership
 	cout << "The nominees for best avian baseball film are\n";
 	for (int i = 0; i < 5; i++)
 	  cout << *films[i] << endl;
+	pwin = films[2]; // films[2] loses ownership
 	cout << "The winner is " << *pwin << "!\n";
+    cout << "Press enter to quit" << endl;
 	cin.get();
 	return 0;
 }

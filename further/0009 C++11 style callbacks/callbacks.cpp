@@ -9,17 +9,17 @@ using std::endl;
 class Test
 {
 public:
-      void blah() { std::cout << "BLAH!" << std::endl; }
-      static void sblah() { std::cout << "SBLAH!" << std::endl; }
+      void blah() { std::cout << "class Test:member function" << std::endl; }
+      static void sblah() { std::cout << "class Test: static member function" << std::endl; }
 };
 
 class Bim
 {
 public:
-      void operator()(){ std::cout << "BIM!" << std::endl; }
+      void operator()(){ std::cout << "class Bim:member function" << std::endl; }
 };
 
-void boum() { std::cout << "BOUM!" << std::endl; }
+void boum() { std::cout << "function" << std::endl; }
 	
 int main()
 {
