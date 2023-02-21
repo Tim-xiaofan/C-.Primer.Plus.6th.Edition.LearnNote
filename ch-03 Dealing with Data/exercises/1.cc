@@ -6,7 +6,7 @@ const int INCHES_PER_FOOT = 12; // conversion factor
 int main(void) 
 {
 	int height_inches;
-	cout << "Enter your height in inches (e.g. 72): ";
+	cout << "Enter your height in inches (e.g. 72): ________\b\b\b\b\b\b\b\b";
 	cin >> height_inches;
 
 	int feet = height_inches / INCHES_PER_FOOT;
