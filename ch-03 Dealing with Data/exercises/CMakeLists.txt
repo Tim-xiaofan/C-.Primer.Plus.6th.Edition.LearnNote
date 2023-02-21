@@ -1,0 +1,10 @@
+project(exercises)
+cmake_minimum_required(VERSION 3.16)
+
+add_executable(1 1.cc)
+add_executable(2 2.cc)
+add_executable(3 3.cc)
+add_executable(4 4.cc)
+add_executable(5 5.cc)
+add_executable(6 6.cc)
+add_executable(7 7.cc)
