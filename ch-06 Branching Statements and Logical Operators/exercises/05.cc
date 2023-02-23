@@ -35,9 +35,11 @@ float calculate_tax(float income)
 int main(void)
 {
 	float income;	
+	cout << "enter income(negative number or non-numeric to quit): ";
 	while((cin >> income) && ( income >= 0))
 	{
 		cout << "tax: " << calculate_tax(income) << endl;
+		cout << "enter income(negative number or non-numeric to quit): ";
 	}
 	return 0;
 }
