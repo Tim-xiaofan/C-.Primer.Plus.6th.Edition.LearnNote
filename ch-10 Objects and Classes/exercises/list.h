@@ -17,6 +17,10 @@ struct node
 		:data(d),
 		next(p)
 	{}
+	//~node(void)
+	//{
+	//	std::cout << "~node(" << data << ")\n"; 
+	//}
 	friend std::ostream& operator<<(std::ostream& os, const node& nd)
 	{
 		return os << "<" << nd.data << ", " << nd.next.get() << ">";
@@ -26,14 +30,26 @@ struct node
 template<typename T>
 using node_ptr = std::shared_ptr<node<T>>;
 
-template<typename T>
-using const_node_ptr = std::shared_ptr<node<const T>>;
+
+/**
+	1	Input Iterator	Can scan the container forward only once, can't change the value it points to (read-only);
+	2	Output Iterator	Can scan the container forward only once, can't read the value it points to (write-only);
+	3	Forward Iterator	Can scan the container forward multiple times, can read and write the value it points to;
+	4	Bidirectional Iterator	Same as previous one but can scan the container back and forth;
+	5	Random Access Iterator	Same as previous one but can access the container also non-sequentially (i.e. by jumping around);
+	6	Contiguous Iterator	Same as previous one, with the addition that logically adjacent elements are also physically adjacent in memory.
+ */
 
 template<typename T, bool Const = false>
 class list_iterator
 {
 	public:
-		using reference_type = typename std::conditional<Const, const T&, T&>::type;
+		using reference			= typename std::conditional<Const, const T&, T&>::type;
+		using value_type		= T;
+		using iterator_category = std::forward_iterator_tag;
+		using difference_type   = std::ptrdiff_t;
+		using pointer           = node_ptr<T>;
+		using const_reference	= const T&;
 
 		list_iterator(const node_ptr<T>& ptr)
 			:ptr_(ptr)
@@ -47,10 +63,10 @@ class list_iterator
 		list_iterator operator++(int)
 		{ list_iterator ret = *this; ptr_ = ptr_->next; return ret; }
 		
-		reference_type operator*()
+		reference operator*()
 		{ return ptr_->data; }
 
-		reference_type operator*() const
+		const_reference operator*() const
 		{ return ptr_->data; }
 		
 		bool operator!=(const list_iterator& rhs)
