@@ -9,17 +9,10 @@
 class abcDMA
 {
 	public:
-		abcDMA(const char* l, int r);
-		abcDMA(const abcDMA& rs);
-		abcDMA& operator=(const abcDMA& rs);
-		virtual ~abcDMA();
+		abcDMA(){}
+		virtual ~abcDMA() {}
 		virtual void type(void) const = 0;
 		virtual void view(void) const = 0;
-		friend std::ostream& operator<<(std::ostream& os,
-					const abcDMA& rs);
-	private:
-		char* label;
-		int rating;
 };
 
 // Base Class Using DMA: Doesn’t Use new
@@ -27,22 +20,26 @@ class baseDMA : public abcDMA
 {
 	public:
 		baseDMA(const char* l = "null", int r = 0);
-		~baseDMA() {};
+		baseDMA(const baseDMA& rs);
+		baseDMA& operator=(const baseDMA& rs);
+		~baseDMA();
 		void type(void) const override { std::cout << "class baseDMA\n"; };
 		void view(void) const override { std::cout << *this << std::endl; }
 		friend std::ostream& operator<<(std::ostream& os,
 					const baseDMA& rs);
+	private:
+		char* label;
+		int rating;
 };
 
 // derived class with DMA : uses new
-class hasDMA : public abcDMA
+class hasDMA : public baseDMA
 {
 	private:
 		char* style;
 	public:
 		hasDMA(const char* s = "none", const char* l = "null",
 					int r = 0);
-		hasDMA(const char* s, const baseDMA& rs);
 		hasDMA(const hasDMA& hs);
 		~hasDMA();
 		virtual void type(void) const override{ std::cout << "class hasDMA\n"; };
@@ -53,7 +50,7 @@ class hasDMA : public abcDMA
 };
 
 // derived class without DMA: Doesn’t Use new
-class lacksDMA : public abcDMA
+class lacksDMA : public baseDMA
 {
 	public:
 		lacksDMA(const char* c = "red", const char* l = "null", int r = 0);

@@ -3,27 +3,27 @@
 #include "dma.h"
 #include <cstring>
 
-// abcDMA methods
-abcDMA::abcDMA(const char* l, int r)
+// baseDMA methods
+baseDMA::baseDMA(const char* l, int r)
 {
 	label = new char[std::strlen(l) + 1];
 	std::strcpy(label, l);
 	rating = r;
 }
 
-abcDMA::abcDMA(const abcDMA& rs)
+baseDMA::baseDMA(const baseDMA& rs)
 {
 	label = new char[std::strlen(rs.label) + 1];
 	std::strcpy(label, rs.label);
 	rating = rs.rating;
 }
 
-abcDMA::~abcDMA()
+baseDMA::~baseDMA()
 {
 	delete [] label;
 }
 
-abcDMA & abcDMA::operator=(const abcDMA& rs)
+baseDMA & baseDMA::operator=(const baseDMA& rs)
 {
 	if (this == &rs)
 	  return *this;
@@ -34,41 +34,23 @@ abcDMA & abcDMA::operator=(const abcDMA& rs)
 	return *this;
 }
 
-std::ostream & operator<<(std::ostream& os, const abcDMA& rs)
+std::ostream & operator<<(std::ostream& os, const baseDMA& rs)
 {
 	os << "Label: " << rs.label << 
 		", Rating: " << rs.rating;
 	return os;
 }
 
-//baseDMA methods
-baseDMA::baseDMA(const char* l, int r)
-		:abcDMA(l, r)
-{}
-
-std::ostream & operator<<(std::ostream& os, const baseDMA& rs)
-{
-	os << (const abcDMA&) rs;
-	return os;
-}
-
 // hasDMA methods
 hasDMA::hasDMA(const char* s, const char* l, int r)
-		: abcDMA(l, r)
-{
-	style = new char[std::strlen(s) + 1];
-	std::strcpy(style, s);
-}
-
-hasDMA::hasDMA(const char* s, const baseDMA& rs)
-		: abcDMA(rs)
+		:baseDMA(l, r)
 {
 	style = new char[std::strlen(s) + 1];
 	std::strcpy(style, s);
 }
 
 hasDMA::hasDMA(const hasDMA& hs)
-		: abcDMA(hs) // invoke abc class copy constructor
+		: baseDMA(hs) // invoke base class copy constructor
 {
 	style = new char[std::strlen(hs.style) + 1];
 	std::strcpy(style, hs.style);
@@ -83,7 +65,7 @@ hasDMA & hasDMA::operator=(const hasDMA& hs)
 {
 	if (this == &hs)
 	  return *this;
-	abcDMA::operator=(hs); // copy abc portion
+	baseDMA::operator=(hs); // copy base portion
 	delete [] style; // prepare for new style
 	style = new char[std::strlen(hs.style) + 1];
 	std::strcpy(style, hs.style);
@@ -92,7 +74,7 @@ hasDMA & hasDMA::operator=(const hasDMA& hs)
 
 std::ostream & operator<<(std::ostream& os, const hasDMA& hs)
 {
-	os << (const abcDMA&) hs;
+	os << (const baseDMA&) hs;
 	os << ", Style: " << hs.style;
 	return os;
 }
@@ -100,14 +82,14 @@ std::ostream & operator<<(std::ostream& os, const hasDMA& hs)
 
 // lacksDMA methods
 lacksDMA::lacksDMA(const char* c, const char* l, int r)
-		:abcDMA(l, r)
+		:baseDMA(l, r)
 {
 	strcpy(color,c);
 }
 
 std::ostream & operator<<(std::ostream& os, const lacksDMA& lk)
 {
-	os << (const abcDMA&) lk;
+	os << (const baseDMA&) lk;
 	os << ", Color: " << lk.color;
 	return os;
 }
