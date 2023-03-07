@@ -28,7 +28,6 @@ class Port
 };
 
 
-
 Port::Port(const char* br, const char* st, int b)
 		:bottles(b)
 {
@@ -72,7 +71,7 @@ VintagePort::VintagePort()
 		:Port(),
 		year(0)
 {
-	char* tmp = new char[strlen("none")];
+	char* tmp = new char[strlen("none") + 1];
 	strcpy(tmp, "none");
 	nickname.reset(tmp);
 }
