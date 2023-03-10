@@ -7,15 +7,15 @@
 double hmean(double a, double b) throw(const char *);
 
 /**note: must shutdwon , or undefined behavor*/
-void myQuit()
+void my_unexpected()
 {
-	std::cout << "myQuit:Terminating due to uncaught exception\n";
-	exit(5);
+	std::cout << "my_unexpected: Terminating due to unexpected exception\n";
+	throw std::bad_exception();
 }
 
 int main()
 {
-	std::set_terminate(myQuit);
+	std::set_unexpected(my_unexpected);
 	double x, y, z;
 	std::cout << "Enter two numbers: ";
 	while (std::cin >> x >> y)
