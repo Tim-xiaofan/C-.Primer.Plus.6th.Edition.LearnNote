@@ -1,5 +1,5 @@
 /** 20210222 22:29, zyj, GuangDong*/
-//error4.cpp -- using the abort() function
+//error4.cpp -- using exception classes
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
@@ -15,6 +15,7 @@ class bad_hmean
 		bad_hmean(double a = 0, double b = 0) : v1(a), v2(b){}
 		void mesg();
 };
+
 inline void bad_hmean::mesg()
 {
 	std::cout << "hmean(" << v1 << ", " << v2 <<"): "
@@ -27,9 +28,10 @@ class bad_gmean
 		double v1;
 		double v2;
 		bad_gmean(double a = 0, double b = 0) : v1(a), v2(b){}
-		const char * mesg();
+		const char* mesg();
 };
-inline const char * bad_gmean::mesg()
+
+inline const char* bad_gmean::mesg()
 {
 	return "gmean() a * b not >= 0\n";
 }
@@ -52,7 +54,7 @@ int main()
 		catch (bad_gmean & bg) // start of exception handler
 		{
 			bg.mesg();
-			std::cout << "Sorry, you don't get to play any more.\n";
+			std::cout << "\nSorry, you don't get to play any more.\n";
 			break;
 		}
 		catch (bad_hmean & bh) 
