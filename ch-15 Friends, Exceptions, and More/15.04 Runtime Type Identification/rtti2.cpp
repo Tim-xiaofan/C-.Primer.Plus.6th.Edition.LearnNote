@@ -14,6 +14,7 @@ class Grand
 		virtual void Speak() const { cout << "I am a grand class!\n";}
 		virtual int Value() const { return hold; }
 };
+
 class Superb : public Grand
 {
 	public:
@@ -22,6 +23,7 @@ class Superb : public Grand
 		virtual void Say() const
 		{ cout << "I hold the superb value of " << Value() << "!\n";}
 };
+
 class Magnificent : public Superb
 {
 	private:
@@ -34,11 +36,12 @@ class Magnificent : public Superb
 };
 
 Grand * GetOne();
-int main()
-{
 
+int main(void)
+{
 	cout << "Class Superb = " << typeid(Superb).name() << endl;
 	cout << "Class Magnificent = " << typeid(Magnificent).name() << endl;
+	cout << endl;
 
 	srand(time(0));
 	Grand * pg;
@@ -46,7 +49,7 @@ int main()
 	for (int i = 0; i < 5; i++)
 	{
 		pg = GetOne();
-		cout << "Now processing type " << typeid(*pg).name() << ".\n";
+		cout << "\nNow processing type " << typeid(*pg).name() << ".\n";
 		pg->Speak();
 		if( (ps = dynamic_cast<Superb *>(pg)))
 		  ps->Say();

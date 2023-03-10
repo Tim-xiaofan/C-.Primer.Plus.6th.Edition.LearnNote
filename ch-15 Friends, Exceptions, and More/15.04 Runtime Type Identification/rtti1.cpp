@@ -11,6 +11,7 @@ class Grand
 		int hold;
 	public:
 		Grand(int h = 0) : hold(h) {}
+		virtual ~Grand() {}
 		virtual void Speak() const { cout << "I am a grand class!\n";}
 		virtual int Value() const { return hold; }
 };
@@ -19,6 +20,7 @@ class Superb : public Grand
 {
 	public:
 		Superb(int h = 0) : Grand(h) {}
+		virtual ~Superb() {}
 		void Speak() const {cout << "I am a superb class!!\n"; }
 		virtual void Say() const
 		{ cout << "I hold the superb value of " << Value() << "!\n";}
@@ -30,13 +32,15 @@ class Magnificent : public Superb
 		char ch;
 	public:
 		Magnificent(int h = 0, char c = 'A') : Superb(h), ch(c) {}
+		virtual ~Magnificent() {}
 		void Speak() const {cout << "I am a magnificent class!!!\n";}
 		void Say() const {cout << "I hold the character " << ch <<
 			" and the integer " << Value() << "!\n"; }
 };
 
 Grand * GetOne();
-int main()
+
+int main(void)
 {
 	std::srand(std::time(0));
 	Grand * pg;
